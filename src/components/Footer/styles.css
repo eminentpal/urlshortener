@@ -76,7 +76,7 @@ ul li{
       
     }
     .footerG{
-        width: 450px;
+        width: 350px;
         height: 100%;
         font-family: 'Poppins', sans-serif;
         position: absolute;
@@ -92,7 +92,7 @@ ul li{
     }
     
     .footerGcontent{
-        width:  450px;
+        width:  350px;
         display: flex;
         flex-direction: column;
         justify-content: center;
