@@ -175,19 +175,27 @@
         top: 50%;
         transform: translate(-50%, -50%);
         width: 300px;
-        height: 300px;
+        height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        background-color: white;
-        border: 2px solid black;
+        background-color: #3B2F53;
+        
+        border: 2px solid rgb(170, 170, 170);
         border-radius: 20px;
         padding: 5px;
         animation: slide-up 0.2s ease-in;
       }
+
+      #popup-box img {
+        position: relative;
+        top: -8px;
+        
+
+      }
       
       .popDiv{
-          height: 200px;
+          height: 320px;
           display: flex;
           flex-direction: column;
           align-items: space-around;
@@ -228,20 +236,28 @@
 
 .winMobile li {
   
-   margin-bottom: 10px;
+   margin-bottom: 20px;
     font-family: 'Lato', sans-serif;
-    color: #8B8A8F;
-    font-size: 17px;
+    color: #FFFFFF;
+    font-size: 25px;
     font-weight: 700;
     text-align: center;
 }
-
+ .Hr{
+     width: 250px;
+     margin: 10px auto ;
+     
+ }
 
 .secondBarMobile {
     margin-top: 20px;
+    width: 250px;
+    height: 100px;
+    margin: auto;
+    margin-top: 10px;
     display:flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     list-style: none;
    
@@ -250,44 +266,34 @@
 
 .secondBarMobile li {
     display: inline-block;
-    margin-left: 30px;
-    font-size: 17px;
+    margin-left: 0px;
+    font-size: 22px;
     font-weight: 700;
-    color: #8B8A8F;
+    color: #FFFFFF;
     font-family: 'Poppins', sans-serif;
 
     
 }
 
 
+
 .secondBarMobile button{
     display: inline-block;
     background: #1ED9D2;
     color: #fff;
-    padding: 8px 30px;
-    margin: 0px 30px;
+    padding: 5px 30px;
+    width: 100%;
+    margin-left: 0px;
     outline: none;
     border: 0;
-    border-radius: 30px;
+    border-radius: 10px;
     transition: background 0.5es ;
-    font-size: 15px;
+    font-size: 22px;
     font-weight: 700;
     cursor: pointer;
 }
 
-.secondBarMobile  li:nth-child(2) {
-     width: 80px;
-     height: 40px;
-     display: flex;
-     justify-content:center;
-     align-items: center;
-     background-color: #1ED9D2;
-     color:#FFFFFF;
-     font-size: 15px;
-    font-weight: 700;
-     border-radius: 40%;
 
-}
   
 }
 

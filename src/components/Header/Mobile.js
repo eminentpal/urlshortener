@@ -28,7 +28,7 @@ export default function Mobile({toggle, Close}) {
                   <li>Pricing</li>
                   <li>Resources</li>
             </div>
-
+            <hr className="Hr" />
             <div className="secondBarMobile" >
                     
                     <li>Login</li>

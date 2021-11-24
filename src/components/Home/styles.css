@@ -599,8 +599,49 @@ ul li{
     
 }
 
+
+.miniCont p{
+    font-size: 16px;
+    font-weight: 700;
+    
+}
+
+.miniCont h1{
+    
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.boxContent1 {
+    text-align: center;
+
+}
+
+.box1Image {
+    width: 60px;
+    height: 60px;
+    background-color: #422D54;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    top: -25px;
+    margin: auto;
+}
+
+.contentOne{
+    line-height: 1.3;
+  
+}
+
+.contentOne h5{
+    margin-bottom: 10px;
+  
+}
 .box1 {
     margin-bottom: 20px;
+    
 }
 .box2 {
     margin-bottom: 20px;
@@ -614,7 +655,82 @@ ul li{
 }
 
 
+
 .lBox{ 
     width: 350px;
+}
+}
+
+@media only screen and (max-width: 360px) {
+    .section{
+        
+        height: 650px
+    }
+    .col-2 h1{
+        font-size: 40px;
+        line-height: 1.3;
+        margin: 25px 0;
+        font-weight: 700;
+    }
+    .col-2{
+       
+        margin-right: 0px;
+        line-height: 2;
+        text-align: center;
+        
+    }
+
+  
+   
+
+    .shorter{
+     
+        width: 300px;
+      
+    }
+
+    
+.shorter form{
+    width: 200px;
+    
+}
+
+    
+.linkContainer {
+    width:300px; 
+    margin: 0 auto;
+}
+
+
+.miniCont {
+    width: 300px;
+    margin-bottom: 50px;
+    
+}
+
+
+.miniCont p{
+    font-size: 15px;
+    font-weight: 700;
+    
+}
+
+.miniCont h1{
+    
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+
+
+
+.mainBox {
+      width: 300px;  
+}
+
+
+.lBox{ 
+    width: 300px;
 }
 }

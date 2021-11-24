@@ -121,7 +121,7 @@ const Home = () => {
 
     return (
         <>
-            <section  className="section">
+            <div  className="section">
             <div class="row">
            <div class="col-2">
                 <h1> More than just <br />
@@ -134,7 +134,7 @@ const Home = () => {
            <img src="images/illustration-working.svg" />
           </div>
         </div>
-            </section>
+            </div>
 
             <div  className="cont">
                <div className="shorter">
