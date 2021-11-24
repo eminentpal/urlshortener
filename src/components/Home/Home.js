@@ -130,7 +130,7 @@ const Home = () => {
                     on how your links are performing.</p>
                         <button  class="btn">Get Started</button>
             </div>
-           <div class="col-2">
+           <div class="col-3">
            <img src="images/illustration-working.svg" />
           </div>
         </div>

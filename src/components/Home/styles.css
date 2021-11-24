@@ -27,9 +27,9 @@
     margin-right: 50px;
 }
 
- .col-2 img{
+ .col-3 img{
     
-    width: 150%;
+    width: 170%;
     padding: 50px 0;
 }
 
@@ -364,4 +364,183 @@ ul li{
 
 .footerGcontentDiv ul {
     margin-top: 20px;
+}
+
+@media only screen and (max-width: 750px) {
+    .section {
+        max-width:100%;
+        width: 100%;
+        height:95vh;
+        position: relative;
+       
+        overflow: hidden;
+      
+    }
+
+    .row{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: center;
+        flex-direction: column-reverse;
+        overflow: hidden;
+        width: 100%;
+        margin: 0;
+        
+    }
+    .col-2{
+        flex-basis: 50%;
+        min-width: 100%;
+        margin-right: 0px;
+        text-align: center;
+    }
+
+    .col-3 img{
+    
+        width: 600%;
+        height: 300px;
+        position: relative;
+        right: 150px
+        
+    }
+
+    
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+    font-weight: 700;
+}
+
+.col-2 p {
+    color: #CAC9CE;
+}
+
+    .cont {
+        margin-top: 200px
+    }
+
+    
+.shorter{
+    background-color: #4B406B;
+    width: 450px;
+    margin: 0 auto;
+    background-color: #3B2F53;
+    background-image: url('./bg-boost-desktop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    
+    top: -70px;
+
+    overflow: hidden;
+}
+.shorter form{
+    width: 300px;
+    height: 150px;
+    background:none;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.shorter input {
+ width: 100%;
+ height: 30px;
+ border-radius: 10px;
+ outline: none;
+ border: 0;
+ padding: 0 20px;
+ color: #333;
+ font-size: 20px;
+
+}
+
+
+.shorter button{
+    display: inline-block;
+    background: #1ED9D2;
+    color: #fff;
+    padding: 5px 30px;
+    width: 100%;
+    margin-left: 0px;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    transition: background 0.5es ;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.linkContainer {
+    width:450px;
+    
+    margin: 0 auto;
+   
+
+}
+
+
+.miniCont {
+    width: 450px;
+    height:200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #F0F1F6;
+}
+
+.miniCont p{
+    font-size: 16px;
+    font-weight: 700;
+    color: #ABABAB; 
+    background-color: #F0F1F6;
+}
+
+.miniCont h1{
+    background-color: #F0F1F6;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+
+
+.mainBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    width: 450px;
+   
+    margin: 0 auto;
+    background: none;
+    
+}
+
+
+.lBox{
+   
+    width: 450px;
+    height: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: none;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
 }

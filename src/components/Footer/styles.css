@@ -63,3 +63,55 @@ ul li{
 .footerGcontentDiv ul {
     margin-top: 20px;
 }
+
+@media only screen and (max-width: 750px) {
+
+    .footerContent {
+        width: 100%;
+        height: 700px;
+        background-color: #232027;
+        
+        position: relative;
+        margin-top: 0px
+      
+    }
+    .footerG{
+        width: 450px;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .footerGcontent{
+        width:  450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: none;
+    }
+
+    .footerIcons{
+        width: 200px;
+        height: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        
+        
+    }
+    .footerGcontentDiv{
+        line-height: 1.7;
+        text-align: center
+    }
+}
