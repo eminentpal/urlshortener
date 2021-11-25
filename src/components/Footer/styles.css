@@ -100,8 +100,11 @@ ul li{
         background: none;
     }
 
+    .footerGcontentDiv h6{
+        font-size: 17px;
+    }
     .footerIcons{
-        width: 200px;
+        width: 250px;
         height: 25px;
         display: flex;
         flex-direction: row;

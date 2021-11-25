@@ -177,6 +177,7 @@ const Home = () => {
                 </div>
 
                </div>
+               {/* <hr className="homeHr"  /> */}
                <div className="box2">
                <div  className="boxContent1">
                   <div className="box1Image">
