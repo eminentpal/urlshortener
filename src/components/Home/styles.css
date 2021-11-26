@@ -180,7 +180,7 @@
 }
 
 .linkDiv a {
-   font-size: 12px;
+   font-size: 14px;
    font-weight: 700;
    color: #5a5353; 
    text-decoration: none;  
@@ -795,13 +795,13 @@ ul li{
     
 }
 
-.linkDiv a{
+/* .linkDiv a{
   font-size: 11.7px;  
 }
 
 .linkBtn{
     font-size: 14px
-}
+} */
 .miniCont {
     width: 300px;
     margin-bottom: 50px;
