@@ -102,7 +102,7 @@ const Home = (props) => {
         }
 
         const handleClick = (id) => {
-             setText(`eminenturl.com/${id}`)
+             setText(`https://eminenturlshortener.herokuapp.com/${id}`)
              
                   setTimeout(function(){ setCopied(false); }, 3000)
                
@@ -144,13 +144,13 @@ const Home = (props) => {
                      { newItems.map(item => (
                      <div className="linkCont">
                         <div  class="linkDiv">
-                         <a href={`/${item.id}`}>eminenturl.com/{item.id}</a>
+                         <a href={`/${item.id}`}>eminenturlshortener.herokuapp.com/{item.id}</a>
                          <CopyToClipboard
                             options={{ debug: props.debug, message: "" }}
                             text={text}
                             onCopy={() => setCopied(true)}
                          >
-                            <button className="linkBtn" style={{backgroundColor: text === `eminenturl.com/${item.id}` && copied && '#3B2F53'}} onClick={()=>handleClick(item.id)} > { text === `eminenturl.com/${item.id}` && copied ? <span>Copied!</span> : <span>Copy</span>} </button>
+                            <button className="linkBtn" style={{backgroundColor: text === `https://eminenturlshortener.herokuapp.com/${item.id}` && copied && '#3B2F53'}} onClick={()=>handleClick(item.id)} > { text === `https://eminenturlshortener.herokuapp.com/${item.id}` && copied ? <span>Copied!</span> : <span>Copy</span>} </button>
                         </CopyToClipboard>
                          
                           </div>
