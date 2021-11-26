@@ -5,24 +5,19 @@ import shortId from 'shortid'
 import { useDispatch, useSelector} from 'react-redux'
 import { urlCreate, urlFetch } from '../../actions/urlActions'
 import { useParams } from 'react-router';
-const Home = () => {
+import { CopyToClipboard } from "react-copy-to-clipboard";
+const Home = ({props}) => {
 
     const [id ,setId] = useState('')
     const [short, setShort] = useState('')
-    
-    
     const [showUrl, setShowUrl] = useState([])
-
+    const [text, setText] = useState("");
+    const [copied, setCopied] = useState(false);
 
     const { urlItems} = useSelector(state => state.url)
 
-
-
     const newItems = urlItems?.reverse()?.slice(0, 5)
     
-
-     
-    console.log(newItems)
 
     const urlLink  = useSelector(state => state.list)
 
@@ -46,122 +41,136 @@ const Home = () => {
 
 
 
- const newLink = urlLink.urlList.itemExist?.url
- const newId = urlLink.urlList.itemExist?.id
+        const newLink = urlLink.urlList.itemExist?.url
+        const newId = urlLink.urlList.itemExist?.id
 
- console.log(link)
- console.log(newId)
-
- const oldId = link?.id
-
- console.log(oldId)
+        const oldId = link?.id
 
 
-  
+        useEffect(() => {
 
+            if(showUrl) {
+                
+                createId()}
 
+                if(link){
+                    dispatch(urlFetch(link))
+                }
 
+                if (oldId && oldId  === newId) {
+                    window.location.replace(newLink)
+                }
 
-
-  useEffect(() => {
-   if(showUrl) {
-       
-    createId()}
-
-    if(link){
-        dispatch(urlFetch(link))
-    }
-
-    if (oldId && oldId  === newId) {
-        window.location.replace(newLink)
-    }
-
-    
-  }, [showUrl, link, newId])
+            
+        }, [showUrl, link, newId])
 
 
   
  
 
-  const handleChange = (e) => {
+        const handleChange = (e) => {
 
-    // const {name, value} = e.target
-    
-  
-    // setShort((prev) => {
+            // const {name, value} = e.target
+            
         
-    // return  {...prev, [name]:value }
-    //   }
-    // )
+            // setShort((prev) => {
+                
+            // return  {...prev, [name]:value }
+            //   }
+            // )
 
-    setShort(e.target.value)
-  }
+            setShort(e.target.value)
+        }
 
-  const handleSubmit = (e) => {
+        const handleSubmit = (e) => {
 
-      e.preventDefault()
-     if (!validUrl.isUri(short)){
-        alert('invalid URL. URL must start with https://')
-     } 
+            e.preventDefault()
+            if (!validUrl.isUri(short)){
+                alert('invalid URL. URL must start with https://')
+            } 
 
-     else {
-        setShowUrl(prev => {
-            return [...prev, short]
-        })
-   
-        dispatch(urlCreate({id, short}))
-        setShort('')
-     }
-     
+            else {
+                setShowUrl(prev => {
+                    return [...prev, short]
+                })
+        
+                dispatch(urlCreate({id, short}))
+                setShort('')
+            }
+            
 
-  }
+        }
+
+        const handleClick = (id) => {
+             setText(`eminenturl.com/${id}`)
+             
+                  setTimeout(function(){ setCopied(false); }, 3000)
+               
+        }
 
 
 
 
     return (
         <>
-            <div  className="section">
-            <div class="row">
-           <div class="col-2">
-                <h1> More than just <br />
-                     Shorter links</h1>
-                     <p>Build your brand’s recognition and get detailed insights 
-                    on how your links are performing.</p>
-                        <button  class="btn">Get Started</button>
+        <div  className="section">
+          <div class="row">
+            <div class="col-2">
+                    <h1> More than just <br />
+                        Shorter links</h1>
+                        <p>Build your brand’s recognition and get detailed insights 
+                        on how your links are performing.</p>
+                            <button  class="btn">Get Started</button>
             </div>
+
            <div class="col-3">
            <img src="images/illustration-working.svg" />
           </div>
         </div>
-            </div>
+      </div>
 
-            <div  className="cont">
-               <div className="shorter">
+     <div  className="cont">
+         <div className="shorter">
                  <form onSubmit={handleSubmit} >
                      <input placeholder="Shorten a link here..." name="url" type="text"  value={short} onChange={handleChange} />
 
                      <button>Shorten It!</button>
                  </form>
                  
-               </div>
-               <div className="linkContainer" >
+         </div>
+
+         <div className="linkContainer" >
+           
                      { newItems.map(item => (
+                     <div className="linkCont">
                         <div  class="linkDiv">
-                         <a href={`/${item.id}`}>www.localhost:3000/{item.id}</a>
-                         </div>
+                         <a href={`/${item.id}`}>eminenturl.com/{item.id}</a>
+                         <CopyToClipboard
+                            options={{message: 'Whoa!'}}
+                            text={text}
+                            onCopy={() => setCopied(true)}
+                         >
+                            <button className="linkBtn" style={{backgroundColor: text === `eminenturl.com/${item.id}` && copied && '#3B2F53'}} onClick={()=>handleClick(item.id)} > { text === `eminenturl.com/${item.id}` && copied ? <span>Copied!</span> : <span>Copy</span>} </button>
+                        </CopyToClipboard>
+                         
+                          </div>
+
+                    </div> 
                      ))
+                     
                          
                          }
-               </div>
+                        
+                   
+         </div>
 
-               <div className="miniCont" >
+         <div className="miniCont" >
                    <h1>Advanced Statistics</h1>
                    <p>Track how your links are performing acrross the web with <br />
                    our advanced statistics dashboard.</p>
-               </div>
+         </div>
                
-               <div className="mainBox">
+         <div className="mainBox">
 
                <div className="box1" >
 
@@ -186,23 +195,26 @@ const Home = () => {
                   <div  className="contentOne" >
                     <h5>Detailed Records</h5>
                     <p>  Gain insights into who is clicking your links. Knowing when and where 
-  people engage with your content helps inform better decisions.</p>
+                         people engage with your content helps inform better decisions.</p>
                   </div>
                 </div>
                </div>
+
                <div className="box3">
-               <div  className="boxContent1">
-                  <div className="box1Image">
-                      <img src="/images/icon-fully-customizable.svg"  alt="brand recognition"   />
-                  </div>
-                  <div  className="contentOne" >
-                    <h5>Fully Customizable</h5>
-                    <p>
-                        Improve brand awareness and content discoverability through customizable 
-                        links, supercharging audience engagement.</p>
-                  </div>
+                <div  className="boxContent1">
+                    <div className="box1Image">
+                        <img src="/images/icon-fully-customizable.svg"  alt="brand recognition"   />
+                    </div>
+                    <div  className="contentOne" >
+                        <h5>Fully Customizable</h5>
+                        <p>
+                            Improve brand awareness and content discoverability through customizable 
+                            links, supercharging audience engagement.</p>
+                    </div>
                 </div>
+
                </div>
+
                </div>
 
                <div className="longBoxDiv" >

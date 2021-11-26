@@ -2,7 +2,6 @@
 
 export const urlCreate = (data) => async (dispatch, getState) => {
    
-    console.log(data)
     const {id, short} = data
 
   
@@ -20,17 +19,11 @@ export const urlCreate = (data) => async (dispatch, getState) => {
 
   export const urlFetch = (id) => async (dispatch, getState) => {
    
-    
-  console.log(id)
-  const items = getState().url.urlItems
-         console.log(items)
+ 
+      const items = getState().url.urlItems
       const itemExist = items.find(i => i.id === id.id)
-      console.log(itemExist)
-       
-  
 
-   dispatch ({type:'Get List',
-       payload: {itemExist} })
+      dispatch ({type:'Get List', payload: {itemExist} })
 
         
     //   var x = localStorage.getItem('urlItems', JSON.stringify(getState().url.urlItems))
