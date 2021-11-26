@@ -146,7 +146,7 @@ const Home = ({props}) => {
                         <div  class="linkDiv">
                          <a href={`/${item.id}`}>eminenturl.com/{item.id}</a>
                          <CopyToClipboard
-                            options={{message: 'Whoa!'}}
+                            
                             text={text}
                             onCopy={() => setCopied(true)}
                          >
