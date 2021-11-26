@@ -6,7 +6,7 @@ import { useDispatch, useSelector} from 'react-redux'
 import { urlCreate, urlFetch } from '../../actions/urlActions'
 import { useParams } from 'react-router';
 import { CopyToClipboard } from "react-copy-to-clipboard";
-const Home = ({props}) => {
+const Home = (props) => {
 
     const [id ,setId] = useState('')
     const [short, setShort] = useState('')
@@ -146,7 +146,7 @@ const Home = ({props}) => {
                         <div  class="linkDiv">
                          <a href={`/${item.id}`}>eminenturl.com/{item.id}</a>
                          <CopyToClipboard
-                            
+                            options={{ debug: props.debug, message: "" }}
                             text={text}
                             onCopy={() => setCopied(true)}
                          >
