@@ -102,7 +102,7 @@ const Home = (props) => {
         }
 
         const handleClick = (id) => {
-             setText(`https://eminenturlshortener.herokuapp.com/${id}`)
+             setText(`https://eminenturl.herokuapp.com/${id}`)
              
                   setTimeout(function(){ setCopied(false); }, 3000)
                
@@ -150,7 +150,9 @@ const Home = (props) => {
                             text={text}
                             onCopy={() => setCopied(true)}
                          >
-                            <button className="linkBtn" style={{backgroundColor: text === `https://eminenturl.herokuapp.com/${item.id}` && copied && '#3B2F53'}} onClick={()=>handleClick(item.id)} > { text === `https://eminenturl.herokuapp.com/${item.id}` && copied ? <span>Copied!</span> : <span>Copy</span>} </button>
+                            <button className="linkBtn" style={{backgroundColor: text === `https://eminenturl.herokuapp.com/${item.id}`
+                             && copied && '#3B2F53'}} onClick={()=>handleClick(item.id)} >
+                              { text === `https://eminenturl.herokuapp.com/${item.id}` && copied ? <span  >Copied!</span> : <span>Copy</span>} </button>
                         </CopyToClipboard>
                          
                           </div>
